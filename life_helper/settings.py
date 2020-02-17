@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 第三方应用
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +143,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 暂时每分钟执行一次，因为crontab只能每分钟执行
+CRONJOBS = [
+    ('*/1 * * * *', 'third_party.huobi.get_huobi_data')
+]
