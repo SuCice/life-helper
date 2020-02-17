@@ -7,6 +7,8 @@ from user.models import User
 class Money(models.Model):
     # 货币的名字
     name = models.CharField(max_length=256)
+    # 价格点位
+    price = models.FloatField(default=0.0)
 
     def __str__(self):
         return self.name

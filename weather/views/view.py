@@ -2,7 +2,7 @@
 
 # Create your views here.
 from django.http import JsonResponse
-from third_party import weather
+from third_party import weathers
 from django.views import View
 import utils
 import json
@@ -20,7 +20,7 @@ class WeatherView(View):
             user = User.objects.filter(open_id=open_id)[0]
             cities = json.loads(user.focus_cities)
             for city in cities:
-                result = weather.get_weather_data(city)
+                result = weathers.get_weather_data(city)
                 data.append({
                     "city_name": city,
                     "weather_list": result.get("data")[0]

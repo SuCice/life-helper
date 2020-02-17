@@ -31,15 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'money.apps.MoneyConfig',
+    'user.apps.UserConfig',
+    'weather.apps.WeatherConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'money.apps.MoneyConfig',
-    'user.apps.UserConfig',
-    'weather.apps.WeatherConfig',
 ]
 
 MIDDLEWARE = [
